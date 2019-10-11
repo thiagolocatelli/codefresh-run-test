@@ -1,0 +1,17 @@
+version: '1.0'
+stages:
+  - execute
+steps:
+
+  ExecuteJavaMavenBuild:
+    title: Run Master Pipeline
+    stage: execute
+    type: codefresh-run
+    arguments:
+      PIPELINE_ID: 5d9fa89f3d6ece21485b766e
+      VARIABLE: 
+        - CF_REPO_OWNER=${{CF_REPO_OWNER}}
+        - CF_REPO_NAME=${{CF_REPO_NAME}}
+        - CF_BRANCH=${{CF_BRANCH}}
+        - CF_REVISION=${{CF_REVISION}}
+        - BUILD_TYPE=JAVA_MAVEN
